@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Flat from './components/flat'
 import GoogleMapReact from 'google-map-react';
-import Marker from './components/marker'
 
 class App extends Component {
   constructor(props) {

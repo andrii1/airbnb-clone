@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Flat from './components/flat'
 import GoogleMapReact from 'google-map-react';
-import Marker from './components/marker'
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +19,6 @@ componentDidMount() {
 }
 
 render() {
-  let center = {
-    lat: 48.8566,
-    lng: 2.3522
-  }
   /*const flat = {
     "id": 145,
     "name": "Charm at the Steps of the Sacre Coeur/Montmartre",
@@ -43,22 +38,7 @@ render() {
 
         </div>
       </div>
-      <div className="map">
-        <GoogleMapReact
-          center={center}
-          zoom={13}>
-          {this.state.flats.map((flat) => {
-            return <Marker
-              key={flat.id}
-              lat={flat.lat}
-              lng={flat.lng}
-              text={flat.price}
-            />
-          }
-          )}
-        </GoogleMapReact>
-
-      </div>
+      <div className="map"></div>
     </div>
   );
 }
