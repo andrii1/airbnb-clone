@@ -62,7 +62,6 @@ render() {
               lat={flat.lat}
               lng={flat.lng}
               text={flat.price}
-              selected={flat === this.state.selectedFlat}
             />
           }
           )}

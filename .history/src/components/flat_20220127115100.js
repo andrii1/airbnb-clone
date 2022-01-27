@@ -11,7 +11,7 @@ class Flat extends React.Component {
       backgroundImage: `url('${this.props.flat.imageUrl}')`
     };
     return (
-      <div className="flat" onClick={this.handleClick}>
+      <div className="flat" onClick={this.props.selectFlat}>
         <div className="flat-picture" style={style}></div>
         <div className="flat-title">{title}</div>
       </div>

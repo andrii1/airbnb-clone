@@ -9,8 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flats: [],
-      selectedFlat: null
+      flats: []
      };
 }
 componentDidMount() {
@@ -20,26 +19,21 @@ componentDidMount() {
     .then(data => this.setState({ flats: data }));
 }
 
-selectFlat = (flat) => {
-  console.log(flat)
-  this.setState ({
-    selectedFlat: flat
-  })
-
-}
-
 render() {
   let center = {
     lat: 48.8566,
     lng: 2.3522
   }
-  if (this.state.selectedFlat) {
-    center = {
-      lat: this.state.selectedFlat.lat,
-      lng: this.state.selectedFlat.lng
-    }
+  /*const flat = {
+    "id": 145,
+    "name": "Charm at the Steps of the Sacre Coeur/Montmartre",
+    "imageUrl": "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat1.jpg",
+    "price": 164,
+    "priceCurrency": "EUR",
+    "lat": 48.884211,
+    "lng": 2.346890
   }
-
+  const flats = [flat, flat]*/
   return (
     <div className="app">
       <div className="main">
@@ -48,7 +42,7 @@ render() {
           {this.state.flats.map(flat => { return <Flat
           key={flat.name}
           flat={flat}
-          selectFlat={this.selectFlat} /> })}
+          handleclick={} /> })}
 
         </div>
       </div>
@@ -62,7 +56,6 @@ render() {
               lat={flat.lat}
               lng={flat.lng}
               text={flat.price}
-              selected={flat === this.state.selectedFlat}
             />
           }
           )}

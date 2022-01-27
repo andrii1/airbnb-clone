@@ -33,12 +33,6 @@ render() {
     lat: 48.8566,
     lng: 2.3522
   }
-  if (this.state.selectedFlat) {
-    center = {
-      lat: this.state.selectedFlat.lat,
-      lng: this.state.selectedFlat.lng
-    }
-  }
 
   return (
     <div className="app">
@@ -62,7 +56,6 @@ render() {
               lat={flat.lat}
               lng={flat.lng}
               text={flat.price}
-              selected={flat === this.state.selectedFlat}
             />
           }
           )}
