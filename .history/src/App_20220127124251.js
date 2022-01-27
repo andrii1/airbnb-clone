@@ -34,7 +34,7 @@ handleSearch = (event) => {
   console.log(event.target.value)
   this.setState({
     search: event.target.value,
-    flats: this.state.allFlats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
+    flats: this.state.flats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
   });
 
 }

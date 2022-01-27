@@ -19,7 +19,7 @@ componentDidMount() {
   const url = 'https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json';
   fetch(url)
     .then(response => response.json())
-    .then(data => this.setState({ flats: data, allFlats: data }));
+    .then(data => this.setState({ flats: data }));
 }
 
 selectFlat = (flat) => {
@@ -34,7 +34,7 @@ handleSearch = (event) => {
   console.log(event.target.value)
   this.setState({
     search: event.target.value,
-    flats: this.state.allFlats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
+    flats: this.state.flats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
   });
 
 }
